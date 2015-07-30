@@ -1,0 +1,18 @@
+<template>
+  <div class="container">
+    <div class="page-header">
+      <h1>Discover new categories here!</h1>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-md-4" repeat.for="category of categories">
+        <div class="panel panel-default">
+          <div click.delegate="$parent.router.navigate('c/' + category.categoryId)" class="panel-body text-center category-panel">
+            <span class="category-panel-name">${category.name}</span>
+            <br>
+            <span class="category-panel-info">${category.count} Posts | ${category.votes} Votes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
